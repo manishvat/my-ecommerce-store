@@ -6,14 +6,12 @@ module.exports = {
   },
   port: process.env.PORT || 3000,
   database: {
-    // PASTE YOUR FULL CLOUD LINK INSIDE THE QUOTES BELOW:
-    // url: 'mongodb+srv://manish:YOUR_PASSWORD_HERE@cluster0.6ztdeel.mongodb.net/mern_ecommerce?appName=Cluster0'
-
-    url: 'mongodb+srv://manish:manish123@cluster0.6ztdeel.mongodb.net/mern_ecommerce?appName=Cluster0'
-
+    // This looks for MONGO_URI in your .env (local) or Render Dashboard (production)
+    url: process.env.MONGO_URI
   },
   jwt: {
-    secret: 'my_temporary_secret_word', // <--- Hardcoded for now
+    // This looks for JWT_SECRET in your .env or Render Dashboard
+    secret: process.env.JWT_SECRET,
     tokenLife: '7d'
   },
   mailchimp: {
